@@ -26,6 +26,73 @@
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    .quality-pillar-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .quality-pillar-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--forest);
+    }
+    .quality-pillar-card--forest {
+      border-left: 5px solid var(--forest);
+    }
+    .quality-pillar-card--brass {
+      border-left: 5px solid var(--brass);
+    }
+    .quality-pillar-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-3);
+    }
+    .quality-pillar-badge--forest {
+      color: var(--forest);
+      background: rgba(26,77,46,0.12);
+    }
+    .quality-pillar-badge--brass {
+      color: #92400e;
+      background: rgba(217,119,6,0.15);
+    }
+    .quality-pillar-title {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--forest-dark) !important;
+      margin: 0 0 var(--space-2) 0;
+      line-height: 1.35;
+    }
+    .quality-pillar-desc {
+      font-size: 0.88rem;
+      color: #334155 !important;
+      line-height: 1.65;
+      margin: 0;
+    }
+    .quality-pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+    @media (max-width: 640px) {
+      .quality-pillars-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
 </head>
 <body data-page="quality">
 <div id="site-nav"></div>
@@ -44,8 +111,9 @@
     </div>
   </section>
 
+
   <!-- Philosophy -->
-  <section class="section" aria-labelledby="quality-philosophy">
+  <section class="section" aria-labelledby="quality-philosophy" style="padding-top:var(--space-4);">
     <div class="container">
       <div class="split split--40-60">
         <div class="reveal-left">
@@ -54,29 +122,50 @@
           <p>At Prime Leaf Processing, quality is not a box ticked at the end of a production run. It is a continuous process of control, verification and correction applied at every stage of the processing cycle — from the moment tobacco enters our facility to the moment it leaves.</p>
           <p>Our multi-stage quality system is built around a simple principle: it is better to catch a deviation early than to discover it in a finished product.</p>
           <p>Every production batch is produced to an agreed customer specification. Our quality system is designed to verify compliance at each stage and to ensure that finished product meets that specification before it is released for dispatch.</p>
+
+          <!-- Tactile Quality Inspection Photo -->
+          <div style="margin-top:var(--space-6);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--gray-200);">
+            <img src="assets/images/quality-inspection-hands.jpg" 
+                 alt="Hands-on tactile and moisture inspection of freshly cut tobacco leaf" 
+                 style="width:100%;height:250px;object-fit:cover;display:block;" 
+                 loading="lazy">
+            <div style="background:var(--forest-dark);padding:var(--space-3) var(--space-4);color:var(--brass-light);font-size:0.75rem;font-weight:600;letter-spacing:0.04em;">
+              ✓ Tactile &amp; Visual Verification of Strand Length, Color &amp; Moisture Equilibrium
+            </div>
+          </div>
         </div>
+
         <div class="reveal-right">
-          <div class="quality-grid stagger" style="grid-template-columns:1fr 1fr;gap:var(--space-4);">
-            <div class="quality-card" style="padding:var(--space-6);">
-              <p class="quality-card__number" style="font-size:var(--text-lg);">In-Process</p>
-              <p class="quality-card__title" style="font-size:var(--text-md);">Control at Every Stage</p>
-              <p class="quality-card__desc" style="font-size:var(--text-xs);">Quality checks applied throughout the processing cycle, not only at the end.</p>
+          <div class="quality-pillars-grid stagger">
+
+            <!-- Card 1: In-Process -->
+            <div class="quality-pillar-card quality-pillar-card--forest">
+              <span class="quality-pillar-badge quality-pillar-badge--forest">In-Process</span>
+              <h3 class="quality-pillar-title">Control at Every Stage</h3>
+              <p class="quality-pillar-desc">Quality checks applied throughout the processing cycle, not only at the end.</p>
             </div>
-            <div class="quality-card" style="padding:var(--space-6);">
-              <p class="quality-card__number" style="font-size:var(--text-lg);">Traceable</p>
-              <p class="quality-card__title" style="font-size:var(--text-md);">Batch Traceability</p>
-              <p class="quality-card__desc" style="font-size:var(--text-xs);">Each batch recorded and traceable from raw material through to dispatch.</p>
+
+            <!-- Card 2: Traceable -->
+            <div class="quality-pillar-card quality-pillar-card--brass">
+              <span class="quality-pillar-badge quality-pillar-badge--brass">Traceable</span>
+              <h3 class="quality-pillar-title">Batch Traceability</h3>
+              <p class="quality-pillar-desc">Each batch recorded and traceable from raw material through to dispatch.</p>
             </div>
-            <div class="quality-card" style="padding:var(--space-6);">
-              <p class="quality-card__number" style="font-size:var(--text-lg);">Spec-Driven</p>
-              <p class="quality-card__title" style="font-size:var(--text-md);">Specification Compliance</p>
-              <p class="quality-card__desc" style="font-size:var(--text-xs);">All quality verification is conducted against the agreed customer specification.</p>
+
+            <!-- Card 3: Spec-Driven -->
+            <div class="quality-pillar-card quality-pillar-card--brass">
+              <span class="quality-pillar-badge quality-pillar-badge--brass">Spec-Driven</span>
+              <h3 class="quality-pillar-title">Specification Compliance</h3>
+              <p class="quality-pillar-desc">All quality verification is conducted against the agreed customer specification.</p>
             </div>
-            <div class="quality-card" style="padding:var(--space-6);">
-              <p class="quality-card__number" style="font-size:var(--text-lg);">Documented</p>
-              <p class="quality-card__title" style="font-size:var(--text-md);">Quality Records</p>
-              <p class="quality-card__desc" style="font-size:var(--text-xs);">Quality records maintained for each batch and available to customers upon request.</p>
+
+            <!-- Card 4: Documented -->
+            <div class="quality-pillar-card quality-pillar-card--forest">
+              <span class="quality-pillar-badge quality-pillar-badge--forest">Documented</span>
+              <h3 class="quality-pillar-title">Quality Records</h3>
+              <p class="quality-pillar-desc">Quality records maintained for each batch and available to customers upon request.</p>
             </div>
+
           </div>
         </div>
       </div>

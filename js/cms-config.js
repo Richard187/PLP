@@ -170,7 +170,7 @@ const PRODUCTS_CONFIG = [
     title: "Cut Rolled Expanded Stems (CRES / CRS)",
     subtitle: "High-Expansion Stems (+35% Filling Power)",
     description: "Engineered high-expansion stem filaments produced on our dedicated second line. Saturated steam conditioning, heavy rolling (<0.20mm), micro-cutting, and flash air expansion (250°C–300°C) deliver +35% filling power and significant raw lamina savings.",
-    image: "assets/images/hero-facility.jpg",
+    image: "assets/images/product-cres.jpg",
     tobacco_type: "100% Selected Virginia & Burley Leaf Stems",
     processing: "Superheated Steam Conditioning · Dual-Roller Mill (≤0.2mm) · Precision Cutter (0.1–0.2mm) · Flash Air Expansion",
     applications: [
