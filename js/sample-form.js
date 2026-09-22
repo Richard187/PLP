@@ -1,16 +1,49 @@
 /**
  * Prime Leaf Processing — Sample Request Form
  * sample-form.js
+ *
+ * Email delivery via Formspree (https://formspree.io)
+ * Replace YOUR_FORM_ID_SAMPLE with the ID from your Formspree dashboard.
+ * Sign up free at formspree.io → New Form → point it to info@primeleafp.com
  */
 
 (function () {
   'use strict';
 
+  // ── Formspree endpoint ──────────────────────────────────────
+  // 1. Go to https://formspree.io and sign up free
+  // 2. Create a new form, set the email to info@primeleafp.com
+  // 3. Copy the form ID and paste below (create a SEPARATE form from contact/rfq)
+  const FORMSPREE_ID = 'YOUR_FORM_ID_SAMPLE'; // ← replace this
+  const ENDPOINT = `https://formspree.io/f/${FORMSPREE_ID}`;
   const form = document.getElementById('sample-form');
   if (!form) return;
 
   const submitBtn = form.querySelector('[data-sample-submit]');
   const statusEl = document.getElementById('sample-status');
+
+  // ── Pre-fill from URL params ────────────────────────────────
+  (function prefillFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    const prod = params.get('product') || params.get('sample-product');
+    if (prod) {
+      const el = document.getElementById('sample-product');
+      if (el) {
+        let found = false;
+        for (let opt of el.options) {
+          if (opt.value.toLowerCase().includes(prod.toLowerCase()) || prod.toLowerCase().includes(opt.value.toLowerCase())) {
+            opt.selected = true;
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          const newOpt = new Option(prod, prod, true, true);
+          el.add(newOpt);
+        }
+      }
+    }
+  })();
 
   const RULES = {
     'sample-name':    { required: true, label: 'Full Name' },
@@ -72,9 +105,21 @@
     };
 
     try {
-      // BACKEND INTEGRATION POINT — see quote-form.js for patterns
-      await new Promise(r => setTimeout(r, 1000));
-      console.log('[Sample] Payload ready for backend:', payload);
+      const formData = new FormData();
+      Object.entries(payload).forEach(([k, v]) => { if (v) formData.set(k, v); });
+      formData.set('_replyto', payload.email);
+      formData.set('_subject', `[PLP] Sample Request from ${payload.company || payload.full_name}`);
+
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.errors?.[0]?.message || 'Server error');
+      }
       if (statusEl) {
         statusEl.className = 'form-status form-status--success visible';
         statusEl.innerHTML = '✓ Thank you for your sample request. Our team will be in touch shortly.';

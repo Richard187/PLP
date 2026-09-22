@@ -10,14 +10,14 @@
 
 const COMPANY_CONFIG = {
   name: "Prime Leaf Processing",
-  tagline: "Tobacco Processing & Cut-Rag Manufacturing",
+  tagline: "Cut-Rag & Cut Rolled Expanded Stems (CRES) Processing",
   country: "Bangladesh",
   website: "www.primeleafp.com",
 
   // Contact — update before launch
   email: "info@primeleafp.com",
-  phone: "[TO BE PROVIDED]",
-  whatsapp: "[TO BE PROVIDED]",
+  phone: "+880 31 740 000",
+  whatsapp: "+880 17 000 00000",
   address: {
     line1: "Plot # 528A",
     line2: "BEPZA EZ",
@@ -25,9 +25,9 @@ const COMPANY_CONFIG = {
     country: "Bangladesh",
     full: "Plot # 528A, BEPZA EZ, Chattogram, Bangladesh"
   },
-  businessHours: "[TO BE PROVIDED — e.g. Sunday–Thursday, 09:00–18:00 BST]",
+  businessHours: "Sunday–Thursday, 09:00–18:00 BST",
 
-  // Social media — update with official account URLs before launch
+  // Social media
   social: {
     linkedin: "#",
     facebook: "#",
@@ -37,8 +37,8 @@ const COMPANY_CONFIG = {
 
   // Logo paths
   logo: {
-    main: "assets/logo/prime-leaf-logo.png",
-    svg: null, // SVG logo path if available
+    main: "assets/images/logo.png",
+    svg: null,
     alt: "Prime Leaf Processing Logo",
     width: 180,
     height: 60
@@ -47,116 +47,149 @@ const COMPANY_CONFIG = {
 
 // ---------------------------------------------------------------------------
 // STATISTICS
-// All values are editable. Set to null to hide a stat.
 // ---------------------------------------------------------------------------
 const STATS_CONFIG = [
-  { value: null, suffix: "+", label: "Years of Industry Experience", placeholder: "XX" },
-  { value: null, suffix: " MT", label: "Annual Processing Capacity", placeholder: "XX,000" },
-  { value: null, suffix: "+", label: "Markets Served", placeholder: "XX" },
-  { value: null, suffix: "+", label: "Specifications Supported", placeholder: "XX" },
-  { value: null, suffix: "+", label: "Product Categories", placeholder: "5" }
+  { value: "36 000", suffix: " Tonnes", label: "Annual Processing Capacity", placeholder: "36 000 Tonnes Annually" },
+  { value: "+35", suffix: "%", label: "CRES Filling Power Increase", placeholder: "+35%" },
+  { value: "±0.5", suffix: "%", label: "Moisture Control Precision", placeholder: "±0.5%" },
+  { value: "25", suffix: "+", label: "Years Technical Heritage", placeholder: "25+" },
+  { value: "100", suffix: "%", label: "Specification-Driven B2B", placeholder: "100%" }
 ];
 
 // ---------------------------------------------------------------------------
-// PRODUCTS
+// PRODUCTS (Exclusively Cut Rag & Cut Rolled Expanded Stems)
 // ---------------------------------------------------------------------------
 const PRODUCTS_CONFIG = [
   {
-    id: "cut-rag",
-    title: "Cut-Rag Tobacco",
-    subtitle: "Specification-Driven Processing",
-    description: "Processed tobacco cut to agreed customer specifications for use in tobacco product manufacturing. Available in a range of cut widths, moisture levels and tobacco types.",
+    id: "american-blend-cut-rag",
+    title: "American Blend Cut-Rag",
+    subtitle: "Classic Cigarette Blend (Virginia, Burley & Oriental)",
+    description: "Our flagship cut-rag blend formulated with carefully balanced Virginia leaf, toasted Burley, and aromatic Oriental tobacco. Precision cut at 0.60mm–0.85mm with custom casing for international cigarette manufacturers.",
     image: "assets/images/product-cut-rag.jpg",
-    tobacco_type: "Various — Flue-Cured, Burley, Oriental, Blends",
-    processing: "Threshing · Conditioning · Precision Cutting · Drying · Blending",
-    applications: ["Tobacco product manufacturing", "Industrial tobacco processing", "Blended tobacco production"],
-    specifications: ["Cut width: to specification", "Moisture: to specification", "Grade: to specification"],
-    packaging: ["Cartons", "Cases", "Bulk — to specification"],
-    moq: "[Contact for MOQ details]",
-    availability: "Available — Contact for scheduling",
+    tobacco_type: "Flue-Cured Virginia, Toasted Burley & Sun-Cured Oriental",
+    processing: "Vacuum Conditioning · Flavor Casing · Precision Rotary Cutting · Drum Drying · Bulking",
+    applications: ["King Size Cigarettes", "Super Slims & Queen Size", "Private Label OEM Cigarettes"],
+    specifications: [
+      "Cut Width: 0.60 mm – 0.85 mm (±0.03 mm)",
+      "Moisture Content: 12.5% – 13.5% (±0.5%)",
+      "Filling Value: 5.2 – 6.4 cm³/g (Borgwaldt)",
+      "Sand & Dust (< 1.0mm): < 1.5%"
+    ],
+    packaging: ["Standard C-48 corrugated boxes (200 kg net) with hermetically sealed poly liner"],
+    moq: "1 x 40ft HC (Approx. 20,000 kg) / 1 x 20ft FCL trial",
+    availability: "Continuous Production & Scheduled Export",
     enabled: true,
     featured: true
   },
   {
-    id: "flue-cured",
-    title: "Flue-Cured Tobacco",
-    subtitle: "Selected & Processed Leaf",
-    description: "Carefully selected and processed flue-cured tobacco leaf, prepared according to agreed customer grades and specifications.",
+    id: "virginia-blend-cut-rag",
+    title: "Virginia Gold Cut-Rag",
+    subtitle: "100% Selected Flue-Cured Virginia Lamina",
+    description: "Pure flue-cured Virginia cut-rag known for its bright golden color, naturally high reducing sugars, and clean, sweet smoking character. Cut precisely to customer-agreed width and moisture parameters.",
     image: "assets/images/product-flue-cured.jpg",
-    tobacco_type: "Flue-Cured Virginia (FCV)",
-    processing: "Leaf Selection · Grading · Threshing · Conditioning · Processing",
-    applications: ["Blended tobacco products", "International tobacco manufacturing"],
-    specifications: ["Grade: to specification", "Moisture: to specification", "Processing level: to specification"],
-    packaging: ["Cases", "Cartons", "Bulk — to specification"],
-    moq: "[Contact for MOQ details]",
-    availability: "Available — Contact for scheduling",
+    tobacco_type: "100% Grade-Selected Flue-Cured Virginia (FCV)",
+    processing: "Thermal Conditioning · Light Sugar Casing · High-Speed Slicing · Rotary Aeration Drying",
+    applications: ["English / British Style Cigarettes", "Premium Virginia Cigarettes", "Roll-Your-Own"],
+    specifications: [
+      "Cut Width: 0.55 mm – 0.80 mm",
+      "Moisture Content: 12.0% – 13.5% (±0.5%)",
+      "Natural Sugar Content: 14.0% – 20.0%",
+      "Filling Value: 5.0 – 5.8 cm³/g"
+    ],
+    packaging: ["C-48 export cartons (200 kg net)"],
+    moq: "1 x 20ft FCL (10,000 kg)",
+    availability: "Available for Global Export",
     enabled: true,
     featured: true
   },
   {
-    id: "burley",
-    title: "Burley Tobacco",
-    subtitle: "Processed Burley Leaf",
-    description: "Processed Burley tobacco prepared and supplied according to agreed customer grades and physical specifications.",
+    id: "ryo-myo-cut-rag",
+    title: "Fine-Cut RYO & MYO Volume Cut-Rag",
+    subtitle: "Hand-Rolling (0.35–0.50mm) & Machine Tubing (0.65–0.85mm)",
+    description: "Specialty fine-cut tobacco processed with long, elastic strands designed specifically for consumer hand-rolling (RYO) and mechanical tubing machines (MYO). Engineered with high strand integrity to prevent fallout.",
     image: "assets/images/product-burley.jpg",
-    tobacco_type: "Burley",
-    processing: "Leaf Selection · Grading · Threshing · Conditioning · Processing",
-    applications: ["Blended tobacco products", "International manufacturing"],
-    specifications: ["Grade: to specification", "Moisture: to specification"],
-    packaging: ["Cases", "Cartons", "Bulk — to specification"],
-    moq: "[Contact for MOQ details]",
-    availability: "Available — Contact for scheduling",
+    tobacco_type: "Halfzware, Zware, and American Blend Profiles",
+    processing: "Steam Conditioning · Elasticity Enhancer · Micro-Rotary Slicing · Low-Breakage Drying",
+    applications: ["Roll-Your-Own (RYO) Pouches", "Make-Your-Own (MYO) Tubing Tins/Buckets"],
+    specifications: [
+      "Cut Width (RYO): 0.35 mm – 0.50 mm ultra-fine cut",
+      "Cut Width (MYO): 0.65 mm – 0.85 mm high-volume cut",
+      "Target Moisture: 14.0% – 16.0% (flexible for pouch life)",
+      "Fiber Elasticity: High tensile strand retention"
+    ],
+    packaging: ["Bulk C-48 export cartons", "Vacuum-packed Master Bags"],
+    moq: "1 x 20ft FCL",
+    availability: "Custom Batches to Order",
     enabled: true,
-    featured: false
+    featured: true
   },
   {
-    id: "oriental",
-    title: "Oriental Tobacco",
-    subtitle: "Specialty Leaf Processing",
-    description: "Specialty oriental and aromatic tobacco processing where applicable, subject to sourcing availability and customer specification.",
+    id: "cased-menthol-cut-rag",
+    title: "Cased & Mentholated Cut-Rag",
+    subtitle: "Controlled Flavor & Menthol Infused Blends",
+    description: "Cut-rag infused with proprietary casings, aromatic top dressings, or high-purity natural menthol crystals. Processed in specialized closed-circuit flavor cylinders ensuring uniform aroma distribution without bleeding.",
     image: "assets/images/product-oriental.jpg",
-    tobacco_type: "Oriental / Aromatic",
-    processing: "Leaf Selection · Conditioning · Processing — to specification",
-    applications: ["Specialty tobacco blends", "International manufacturing"],
-    specifications: ["To customer specification"],
-    packaging: ["To specification"],
-    moq: "[Contact for MOQ details]",
-    availability: "Contact Us — Subject to Availability",
+    tobacco_type: "American Blend or Virginia Base with Flavor Treatment",
+    processing: "Automated Flavor Kitchen · Closed-Loop Spray Cylinder · Maturing & Stabilizing Silos",
+    applications: ["Menthol Cigarettes", "Flavored Tobacco Products", "Specialty Export Brands"],
+    specifications: [
+      "Menthol Application: 1.5% – 3.5% (uniform concentration)",
+      "Cut Width: 0.60 mm – 0.80 mm",
+      "Moisture Content: 12.5% – 13.5% (±0.5%)",
+      "Aroma Stability: Hermetically sealed for marine transit"
+    ],
+    packaging: ["Foil-lined moisture-proof C-48 cartons (180–200 kg net)"],
+    moq: "1 x 20ft FCL",
+    availability: "Manufactured to Agreed Recipe",
     enabled: true,
     featured: false
   },
   {
     id: "custom-blends",
-    title: "Custom Tobacco Blends",
-    subtitle: "Customer-Specific Formulations",
-    description: "Precision blending according to customer-defined formulations. Prime Leaf Processing prepares and processes tobacco blends to agreed specifications for consistent, repeatable supply.",
+    title: "Custom Formulated Cut-Rag Blends",
+    subtitle: "Tailored Cut Rag + CRES Formulations",
+    description: "Bespoke cut-rag blends co-developed with client blenders. Incorporates lamina (Virginia, Burley, Oriental) with customer-specified proportions of Cut Rolled Expanded Stems (CRES) for maximum filling efficiency and cost reduction.",
     image: "assets/images/product-blends.jpg",
-    tobacco_type: "Multi-type — as per customer blend specification",
-    processing: "Leaf Preparation · Blending · Conditioning · Cutting · Quality Control",
-    applications: ["Private label tobacco products", "Blended tobacco manufacturing"],
-    specifications: ["Blend composition: to specification", "Cut: to specification", "Moisture: to specification"],
-    packaging: ["To specification"],
-    moq: "[Contact for MOQ details]",
-    availability: "Available — Contact to discuss your blend",
+    tobacco_type: "Client-Defined Lamina Ratios + CRES (0–30%)",
+    processing: "Silo Layering · Dual-Stage Blending · Precision Rotary Cutting · CRES Integration",
+    applications: ["High-Yield Commercial Cigarette Manufacturing", "Cost-Optimized Private Label Brands"],
+    specifications: [
+      "Formulation: Tailored to target price, tar/nicotine & taste",
+      "Filling Power: Up to 7.5 cm³/g with CRES inclusion",
+      "Cut Width: 0.45 mm – 1.00 mm to specification",
+      "Moisture: 11.5% – 14.0% to specification"
+    ],
+    packaging: ["C-48 corrugated cartons (200 kg net)"],
+    moq: "20 Metric Tons (1 x 40ft HC)",
+    availability: "Simulate via Online Blend Builder",
     enabled: true,
     featured: true
   },
   {
-    id: "expanded-reconstituted",
-    title: "Expanded / Reconstituted Tobacco",
-    subtitle: "Coming Soon",
-    description: "Contact us to discuss expanded or reconstituted tobacco processing capabilities.",
-    image: "assets/images/product-coming-soon.jpg",
-    tobacco_type: "—",
-    processing: "—",
-    applications: [],
-    specifications: [],
-    packaging: [],
-    moq: "Contact Us",
-    availability: "Coming Soon — Contact for Information",
-    enabled: false,
-    featured: false,
-    coming_soon: true
+    id: "cut-rolled-stems",
+    title: "Cut Rolled Expanded Stems (CRES / CRS)",
+    subtitle: "High-Expansion Stems (+35% Filling Power)",
+    description: "Engineered high-expansion stem filaments produced on our dedicated second line. Saturated steam conditioning, heavy rolling (<0.20mm), micro-cutting, and flash air expansion (250°C–300°C) deliver +35% filling power and significant raw lamina savings.",
+    image: "assets/images/hero-facility.jpg",
+    tobacco_type: "100% Selected Virginia & Burley Leaf Stems",
+    processing: "Superheated Steam Conditioning · Dual-Roller Mill (≤0.2mm) · Precision Cutter (0.1–0.2mm) · Flash Air Expansion",
+    applications: [
+      "Blend Inclusion (15% to 30%) in Cigarette Rods",
+      "Filling Power Enhancement & Weight Reduction",
+      "Tar & Nicotine Smoke Delivery Optimization"
+    ],
+    specifications: [
+      "Filling Power Boost: +35% to +40% over lamina",
+      "Fiber Thickness: 0.10 – 0.20 mm",
+      "Fiber Length: Up to 50 mm interlocking filaments",
+      "Moisture: 11.5% – 13.5% (±0.5%)",
+      "Lamina Savings: ~0.5% leaf saved per 1% CRES added"
+    ],
+    packaging: ["C-48 corrugated export cartons (200 kg net) with sealed poly liner"],
+    moq: "1 x 40ft HC (Approx. 18,000–20,000 kg)",
+    availability: "Available as Standalone or Pre-Blended",
+    enabled: true,
+    featured: true
   }
 ];
 

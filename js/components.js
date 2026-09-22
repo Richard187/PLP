@@ -17,17 +17,76 @@
     </a>
 
     <ul class="nav__links" role="list">
-      <li><a href="index.html"          class="nav__link" data-page="index">Home</a></li>
-      <li><a href="about.html"          class="nav__link" data-page="about">About Us</a></li>
-      <li><a href="processing.html"     class="nav__link" data-page="processing">Processing</a></li>
-      <li><a href="products.html"       class="nav__link" data-page="products">Products</a></li>
-      <li><a href="quality.html"        class="nav__link" data-page="quality">Quality</a></li>
-      <li><a href="facilities.html"     class="nav__link" data-page="facilities">Facilities</a></li>
-      <li><a href="markets.html"        class="nav__link" data-page="markets">Markets</a></li>
-      <li><a href="contact.html"        class="nav__link" data-page="contact">Contact</a></li>
+      <li class="nav__item"><a href="index.html" class="nav__link" data-page="index">Home</a></li>
+      <li class="nav__item"><a href="about.html" class="nav__link" data-page="about">About Us</a></li>
+      <li class="nav__item nav__item--dropdown">
+        <a href="products.html" class="nav__link" data-page="products" aria-haspopup="true">
+          Products <span class="nav__link-caret">▾</span>
+        </a>
+        <ul class="nav__dropdown" role="menu">
+          <li class="nav__dropdown-item">
+            <a href="products.html#cut-rag" class="nav__dropdown-link">
+              <strong>Cut-Rag Tobacco</strong>
+              <small>Custom cigarette, RYO & MYO specifications</small>
+            </a>
+          </li>
+          <li class="nav__dropdown-item">
+            <a href="cut-rolled-stems.html" class="nav__dropdown-link">
+              <strong>Cut Rolled Expanded Stems (CRES)</strong>
+              <small>High-expansion CRS, +35% filling power</small>
+            </a>
+          </li>
+          <li class="nav__dropdown-divider"></li>
+          <li class="nav__dropdown-item">
+            <a href="create-your-own-blend.html" class="nav__dropdown-link">
+              <strong>Create Your Own Blend</strong>
+              <small>Interactive lamina & CRES blend customizer</small>
+            </a>
+          </li>
+          <li class="nav__dropdown-item">
+            <a href="products.html" class="nav__dropdown-link">
+              <strong>All Products Overview</strong>
+              <small>B2B catalogue & technical grades</small>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav__item nav__item--dropdown">
+        <a href="processing.html" class="nav__link" data-page="processing" aria-haspopup="true">
+          Processing <span class="nav__link-caret">▾</span>
+        </a>
+        <ul class="nav__dropdown" role="menu">
+          <li class="nav__dropdown-item">
+            <a href="processing.html#cut-rag-line" class="nav__dropdown-link">
+              <strong>Cut-Rag Processing Line</strong>
+              <small>Conditioning, rotary cutting, casing & drying</small>
+            </a>
+          </li>
+          <li class="nav__dropdown-item">
+            <a href="processing.html#cres-line" class="nav__dropdown-link">
+              <strong>Dedicated CRES Line</strong>
+              <small>High-pressure steam rolling & air expansion</small>
+            </a>
+          </li>
+          <li class="nav__dropdown-divider"></li>
+          <li class="nav__dropdown-item">
+            <a href="processing.html" class="nav__dropdown-link">
+              <strong>Dual-Line Capabilities</strong>
+              <small>36 000 Tonnes annual production volume</small>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav__item"><a href="facilities.html" class="nav__link" data-page="facilities">Facilities</a></li>
+      <li class="nav__item"><a href="quality.html" class="nav__link" data-page="quality">Quality</a></li>
+      <li class="nav__item"><a href="markets.html" class="nav__link" data-page="markets">Markets</a></li>
+      <li class="nav__item"><a href="contact.html" class="nav__link" data-page="contact">Contact</a></li>
     </ul>
 
-    <a href="quote.html" class="nav__cta desktop-only" aria-label="Request a Quote">Request a Quote</a>
+    <div class="desktop-only" style="display:flex;align-items:center;gap:0.75rem;">
+      <a href="create-your-own-blend.html" class="btn btn--sm" style="background:transparent;border:1px solid var(--brass);color:var(--brass-light);font-size:0.75rem;padding:0.5rem 0.85rem;border-radius:var(--radius-sm);text-transform:uppercase;font-weight:600;letter-spacing:0.05em;text-decoration:none;">Custom Blend</a>
+      <a href="quote.html" class="nav__cta" aria-label="Request a Quote">Request a Quote</a>
+    </div>
 
     <button class="nav__toggle" id="nav-toggle"
             aria-controls="nav-mobile" aria-expanded="false" aria-label="Toggle mobile menu">
@@ -40,15 +99,13 @@
   <ul class="nav__mobile-links" role="list">
     <li><a href="index.html"      class="nav__mobile-link">Home</a></li>
     <li><a href="about.html"      class="nav__mobile-link">About Us</a></li>
-    <li><a href="processing.html" class="nav__mobile-link">Processing</a></li>
-    <li><a href="products.html"   class="nav__mobile-link">Products</a></li>
-    <li><a href="quality.html"    class="nav__mobile-link">Quality</a></li>
-    <li><a href="facilities.html" class="nav__mobile-link">Facilities</a></li>
-    <li><a href="sourcing.html"   class="nav__mobile-link">Sourcing</a></li>
-    <li><a href="sustainability.html" class="nav__mobile-link">Sustainability</a></li>
+    <li><a href="products.html#cut-rag" class="nav__mobile-link">Cut-Rag Tobacco</a></li>
+    <li><a href="cut-rolled-stems.html" class="nav__mobile-link">Cut Rolled Expanded Stems (CRES)</a></li>
+    <li><a href="create-your-own-blend.html" class="nav__mobile-link" style="color:var(--brass-light);font-weight:700;">★ Create Your Own Blend</a></li>
+    <li><a href="processing.html" class="nav__mobile-link">Processing (Dual Lines)</a></li>
+    <li><a href="quality.html"    class="nav__mobile-link">Quality & Lab</a></li>
+    <li><a href="facilities.html" class="nav__mobile-link">Facilities (BEPZA EZ)</a></li>
     <li><a href="markets.html"    class="nav__mobile-link">Markets</a></li>
-    <li><a href="logistics.html"  class="nav__mobile-link">Logistics</a></li>
-    <li><a href="insights.html"   class="nav__mobile-link">Insights</a></li>
     <li><a href="contact.html"    class="nav__mobile-link">Contact</a></li>
   </ul>
   <a href="quote.html" class="nav__mobile-cta">Request a Quote</a>
@@ -65,8 +122,8 @@
       <div class="footer__brand">
         <img src="assets/images/logo.png" alt="Prime Leaf Processing" style="height:60px;width:auto;object-fit:contain;margin-bottom:var(--space-5);filter:brightness(0) invert(1);">
         <p class="footer__brand-desc">
-          Bangladesh-based tobacco leaf processing and cut-rag manufacturing company.
-          Delivering specification-driven processing solutions for international B2B customers.
+          Bangladesh-based premier tobacco processor specialized exclusively in Cut-Rag Tobacco and Cut Rolled Expanded Stems (CRES).
+          Delivering high-specification, filling-optimized solutions for international B2B manufacturers.
         </p>
         <div class="footer__social" aria-label="Social media links">
           <a href="#" class="footer__social-link" aria-label="LinkedIn" rel="noopener">
@@ -78,37 +135,33 @@
           <a href="#" class="footer__social-link" aria-label="Instagram" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           </a>
-          <a href="#" class="footer__social-link" aria-label="YouTube" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
-          </a>
         </div>
       </div>
 
       <!-- Quick Links -->
       <nav aria-label="Quick links">
-        <p class="footer__col-title">Quick Links</p>
+        <p class="footer__col-title">Core Offerings</p>
         <ul class="footer__links" role="list">
-          <li><a href="about.html"          class="footer__link">About Us</a></li>
-          <li><a href="processing.html"     class="footer__link">Processing</a></li>
-          <li><a href="products.html"       class="footer__link">Products</a></li>
-          <li><a href="quality.html"        class="footer__link">Quality</a></li>
-          <li><a href="facilities.html"     class="footer__link">Facilities</a></li>
-          <li><a href="sourcing.html"       class="footer__link">Sourcing</a></li>
-          <li><a href="sustainability.html" class="footer__link">Sustainability</a></li>
-          <li><a href="markets.html"        class="footer__link">Markets</a></li>
-          <li><a href="insights.html"       class="footer__link">Insights</a></li>
+          <li><a href="products.html#cut-rag" class="footer__link">Cut-Rag Tobacco</a></li>
+          <li><a href="cut-rolled-stems.html" class="footer__link">Cut Rolled Expanded Stems (CRES)</a></li>
+          <li><a href="create-your-own-blend.html" class="footer__link">Create Your Own Blend</a></li>
+          <li><a href="processing.html" class="footer__link">Dual-Line Processing</a></li>
+          <li><a href="facilities.html" class="footer__link">BEPZA EZ Facility</a></li>
+          <li><a href="quality.html" class="footer__link">Quality & Lab Specs</a></li>
+          <li><a href="markets.html" class="footer__link">Global Export Markets</a></li>
         </ul>
       </nav>
 
       <!-- Business -->
       <nav aria-label="Business links">
-        <p class="footer__col-title">Business</p>
+        <p class="footer__col-title">Client Services</p>
         <ul class="footer__links" role="list">
-          <li><a href="quote.html"          class="footer__link">Request a Quote</a></li>
-          <li><a href="sample-request.html" class="footer__link">Request a Sample</a></li>
-          <li><a href="contact.html"        class="footer__link">Product Information</a></li>
-          <li><a href="contact.html"        class="footer__link">Export Enquiries</a></li>
-          <li><a href="contact.html"        class="footer__link">Contact Us</a></li>
+          <li><a href="create-your-own-blend.html" class="footer__link">Blend Builder Tool</a></li>
+          <li><a href="quote.html" class="footer__link">Request a Commercial Quote</a></li>
+          <li><a href="sample-request.html" class="footer__link">Request CRES / Rag Sample</a></li>
+          <li><a href="processing.html#specs" class="footer__link">Technical Tolerances</a></li>
+          <li><a href="contact.html" class="footer__link">Port & Export Logistics</a></li>
+          <li><a href="contact.html" class="footer__link">Contact Technical Sales</a></li>
         </ul>
       </nav>
 

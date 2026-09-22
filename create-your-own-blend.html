@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Your Own Blend | Cut-Rag &amp; CRES Customizer | Prime Leaf Processing</title>
+  <meta name="description" content="Simulate and design your custom tobacco blend with Cut-Rag and Cut Rolled Expanded Stems (CRES). Model filling power, lamina savings, and tar reduction in real-time.">
+  <link rel="canonical" href="https://www.primeleafp.com/create-your-own-blend.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body data-page="create-blend">
+<div id="site-nav"></div>
+
+<main id="main-content">
+
+  <section class="page-hero" aria-labelledby="blend-hero-title">
+    <div class="container">
+      <div class="page-hero__content">
+        <nav class="page-hero__breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span aria-hidden="true">›</span>
+          <a href="products.html">Products</a><span aria-hidden="true">›</span>
+          <span>Create Your Own Blend</span>
+        </nav>
+        <span class="badge-cres" style="margin-bottom:var(--space-3);"><span style="color:var(--brass-light)">★</span> Interactive B2B Formulation Engine</span>
+        <h1 id="blend-hero-title" class="page-hero__title">Create Your Own Custom Blend</h1>
+        <p class="page-hero__subtitle">
+          Tailor lamina components with Cut Rolled Expanded Stems (CRES) up to 30%. Simulate filling power enhancements, raw leaf savings, and export directly to a commercial quote.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--offwhite">
+    <div class="container">
+
+      <!-- Preset Blend Quick-Select -->
+      <div style="margin-bottom:var(--space-8);text-align:center;" class="reveal">
+        <p style="font-family:var(--font-accent);font-size:var(--text-xs);font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);margin-bottom:var(--space-3);">Popular Blend Presets</p>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-3);">
+          <button type="button" class="btn btn--sm btn--outline preset-btn" data-v="55" data-b="20" data-o="5" data-c="20" data-name="American Blend (20% CRES)">
+            Standard American Blend (20% CRES)
+          </button>
+          <button type="button" class="btn btn--sm btn--outline preset-btn" data-v="45" data-b="20" data-o="5" data-c="30" data-name="High-Yield Economy (30% CRES)">
+            High-Yield Economy Blend (30% CRES)
+          </button>
+          <button type="button" class="btn btn--sm btn--outline preset-btn" data-v="75" data-b="10" data-o="0" data-c="15" data-name="Virginia Rich (15% CRES)">
+            Virginia Rich Blend (15% CRES)
+          </button>
+          <button type="button" class="btn btn--sm btn--outline preset-btn" data-v="65" data-b="25" data-o="10" data-c="0" data-name="Pure Lamina 100%">
+            100% Pure Lamina Cut Rag (0% CRES)
+          </button>
+        </div>
+      </div>
+
+      <div class="split" style="align-items:start;">
+
+        <!-- Interactive Customizer Controls -->
+        <div class="blend-wizard reveal-left">
+          <h2 style="font-size:1.4rem;color:var(--forest-dark);margin-bottom:var(--space-2);">1. Blend Composition Ratio</h2>
+          <p style="font-size:var(--text-sm);color:var(--gray-600);margin-bottom:var(--space-6);">
+            Adjust the sliders below. Total ratio is maintained at 100%. CRES stems increase overall filling power and yield.
+          </p>
+
+          <!-- Virginia Slider -->
+          <div class="blend-ratio-slider-group">
+            <div class="blend-slider-header">
+              <span class="blend-slider-name"><span style="color:#d97706;">●</span> Flue-Cured Virginia Lamina</span>
+              <span class="blend-slider-val" id="val-virginia">55%</span>
+            </div>
+            <input type="range" min="0" max="100" value="55" class="blend-slider" id="slider-virginia">
+          </div>
+
+          <!-- Burley Slider -->
+          <div class="blend-ratio-slider-group">
+            <div class="blend-slider-header">
+              <span class="blend-slider-name"><span style="color:#78350f;">●</span> Air-Cured Burley Lamina</span>
+              <span class="blend-slider-val" id="val-burley">20%</span>
+            </div>
+            <input type="range" min="0" max="100" value="20" class="blend-slider" id="slider-burley">
+          </div>
+
+          <!-- Oriental Slider -->
+          <div class="blend-ratio-slider-group">
+            <div class="blend-slider-header">
+              <span class="blend-slider-name"><span style="color:#b45309;">●</span> Sun-Cured Oriental Leaf</span>
+              <span class="blend-slider-val" id="val-oriental">5%</span>
+            </div>
+            <input type="range" min="0" max="100" value="5" class="blend-slider" id="slider-oriental">
+          </div>
+
+          <!-- CRES Slider -->
+          <div class="blend-ratio-slider-group" style="background:rgba(21,128,61,0.06);padding:var(--space-4);border-radius:var(--radius-md);border:1px dashed #15803d;">
+            <div class="blend-slider-header">
+              <span class="blend-slider-name" style="font-weight:700;color:#15803d;">
+                ★ Cut Rolled Expanded Stems (CRES)
+                <small style="display:block;font-weight:400;color:var(--gray-600);">High-expansion filaments (0–30% recommended)</small>
+              </span>
+              <span class="blend-slider-val" style="color:#15803d;" id="val-cres">20%</span>
+            </div>
+            <input type="range" min="0" max="35" value="20" class="blend-slider" id="slider-cres" style="accent-color:#15803d;">
+          </div>
+
+          <!-- Visual Bar -->
+          <div style="margin:var(--space-6) 0;">
+            <div style="display:flex;justify-content:space-between;font-size:0.75rem;margin-bottom:4px;color:var(--gray-600);">
+              <span>Visual Ratio Breakdown</span>
+              <strong id="total-ratio-label">Total: 100%</strong>
+            </div>
+            <div class="blend-ratio-bar">
+              <div class="blend-ratio-segment segment-virginia" id="bar-virginia" style="width:55%;"></div>
+              <div class="blend-ratio-segment segment-burley" id="bar-burley" style="width:20%;"></div>
+              <div class="blend-ratio-segment segment-oriental" id="bar-oriental" style="width:5%;"></div>
+              <div class="blend-ratio-segment segment-cres" id="bar-cres" style="width:20%;"></div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);font-size:0.7rem;color:var(--gray-600);margin-top:6px;">
+              <span><strong style="color:#d97706;">■</strong> Virginia</span>
+              <span><strong style="color:#78350f;">■</strong> Burley</span>
+              <span><strong style="color:#b45309;">■</strong> Oriental</span>
+              <span><strong style="color:#15803d;">■</strong> CRES Stem</span>
+            </div>
+          </div>
+
+          <h2 style="font-size:1.2rem;color:var(--forest-dark);margin:var(--space-8) 0 var(--space-4);">2. Physical Cutting &amp; Moisture Specifications</h2>
+          <div class="form-grid" style="grid-template-columns:1fr 1fr;gap:var(--space-4);">
+            <div>
+              <label class="form-label" for="spec-cut-width" style="font-size:0.8rem;">Cut Width</label>
+              <select class="form-select" id="spec-cut-width" style="font-size:0.85rem;">
+                <option value="0.45 mm (Ultra-fine RYO / MYO)">0.45 mm (Ultra-fine RYO / MYO)</option>
+                <option value="0.60 mm (Standard Cigarette)" selected>0.60 mm (Standard Cigarette)</option>
+                <option value="0.80 mm (Volume Cigarette)">0.80 mm (Volume Cigarette)</option>
+                <option value="1.00 mm (Coarse / Pipe)">1.00 mm (Coarse / Pipe)</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="spec-target-moisture" style="font-size:0.8rem;">Target Moisture (±0.5%)</label>
+              <select class="form-select" id="spec-target-moisture" style="font-size:0.85rem;">
+                <option value="11.5%">11.5% (Dry Climate / Fast Pack)</option>
+                <option value="12.0%" selected>12.0% (Standard Export)</option>
+                <option value="12.5%">12.5% (Balanced)</option>
+                <option value="13.0%">13.0% (High Flexibility)</option>
+                <option value="13.5%">13.5% (Fine Cut RYO)</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="spec-casing" style="font-size:0.8rem;">Casing / Flavouring</label>
+              <select class="form-select" id="spec-casing" style="font-size:0.85rem;">
+                <option value="Uncased / Natural">Uncased / Pure Natural</option>
+                <option value="Standard American Casing" selected>Standard American Blend Casing</option>
+                <option value="Virginia Sweetened">Virginia Light Honey Casing</option>
+                <option value="Customer Proprietary Formulation">Customer Proprietary Recipe</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="spec-packaging" style="font-size:0.8rem;">Export Packaging</label>
+              <select class="form-select" id="spec-packaging" style="font-size:0.85rem;">
+                <option value="Standard C-48 Cartons (200kg net)" selected>Standard C-48 Cartons (200kg)</option>
+                <option value="Vacuum Sealed Bags">Vacuum Sealed Bags in Cartons</option>
+                <option value="Wooden Cases (to spec)">Specialized Wooden Export Cases</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real-Time Metrics & Order Export -->
+        <div class="reveal-right" style="position:sticky;top:100px;">
+          <div style="background:var(--white);border:1px solid var(--gray-300);border-radius:var(--radius-xl);padding:var(--space-6);box-shadow:0 12px 30px rgba(0,0,0,0.06);">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-4);border-bottom:2px solid var(--gray-200);padding-bottom:var(--space-2);">
+              <h3 style="font-size:1.15rem;color:var(--forest-dark);margin:0;">Calculated Batch Performance</h3>
+              <span class="badge-cres--green badge-cres">Live Simulation</span>
+            </div>
+
+            <!-- Dynamic Metrics Grid -->
+            <div class="blend-metrics-box">
+              <div>
+                <div class="blend-metric-item-val" id="metric-filling-power">6.6 cm³/g</div>
+                <div class="blend-metric-item-lbl">Borgwaldt Filling Power</div>
+              </div>
+              <div>
+                <div class="blend-metric-item-val" id="metric-leaf-savings">10.0%</div>
+                <div class="blend-metric-item-lbl">Lamina Leaf Savings</div>
+              </div>
+              <div>
+                <div class="blend-metric-item-val" id="metric-tar-reduction">-38%</div>
+                <div class="blend-metric-item-lbl">Tar Delivery Reduction</div>
+              </div>
+              <div>
+                <div class="blend-metric-item-val" id="metric-nicotine">1.3 mg</div>
+                <div class="blend-metric-item-lbl">Est. Nicotine Density</div>
+              </div>
+            </div>
+
+            <!-- Summary Breakdown List -->
+            <div style="margin:var(--space-6) 0;font-size:var(--text-sm);color:var(--charcoal);background:var(--gray-100);padding:var(--space-4);border-radius:var(--radius-md);">
+              <div style="font-weight:700;color:var(--forest-dark);margin-bottom:var(--space-2);">Formulation Summary:</div>
+              <ul style="list-style:none;padding:0;margin:0;line-height:1.8;">
+                <li>• <strong>Virginia Lamina:</strong> <span id="summary-v">55%</span></li>
+                <li>• <strong>Burley Lamina:</strong> <span id="summary-b">20%</span></li>
+                <li>• <strong>Oriental Lamina:</strong> <span id="summary-o">5%</span></li>
+                <li>• <strong>Cut Rolled Expanded Stems:</strong> <span id="summary-c" style="color:#15803d;font-weight:700;">20%</span></li>
+                <li>• <strong>Cut Width:</strong> <span id="summary-cut">0.60 mm</span></li>
+                <li>• <strong>Moisture Target:</strong> <span id="summary-moisture">12.0%</span></li>
+              </ul>
+            </div>
+
+            <!-- Action Button -->
+            <button type="button" id="btn-export-quote" class="btn btn--primary" style="width:100%;text-align:center;padding:0.9rem 1.5rem;font-size:0.95rem;justify-content:center;">
+              Request Quote with this Blend →
+            </button>
+            <p style="font-size:0.75rem;color:var(--gray-500);text-align:center;margin-top:var(--space-3);">
+              Specifications will be automatically transferred to our commercial quote request form.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="js/cms-config.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js" defer></script>
+
+<script>
+(function() {
+  'use strict';
+
+  const sliderV = document.getElementById('slider-virginia');
+  const sliderB = document.getElementById('slider-burley');
+  const sliderO = document.getElementById('slider-oriental');
+  const sliderC = document.getElementById('slider-cres');
+
+  const valV = document.getElementById('val-virginia');
+  const valB = document.getElementById('val-burley');
+  const valO = document.getElementById('val-oriental');
+  const valC = document.getElementById('val-cres');
+
+  const barV = document.getElementById('bar-virginia');
+  const barB = document.getElementById('bar-burley');
+  const barO = document.getElementById('bar-oriental');
+  const barC = document.getElementById('bar-cres');
+
+  const metricFP = document.getElementById('metric-filling-power');
+  const metricSavings = document.getElementById('metric-leaf-savings');
+  const metricTar = document.getElementById('metric-tar-reduction');
+  const metricNic = document.getElementById('metric-nicotine');
+
+  const summaryV = document.getElementById('summary-v');
+  const summaryB = document.getElementById('summary-b');
+  const summaryO = document.getElementById('summary-o');
+  const summaryC = document.getElementById('summary-c');
+  const summaryCut = document.getElementById('summary-cut');
+  const summaryMoisture = document.getElementById('summary-moisture');
+
+  const cutSelect = document.getElementById('spec-cut-width');
+  const moistureSelect = document.getElementById('spec-target-moisture');
+  const casingSelect = document.getElementById('spec-casing');
+  const packagingSelect = document.getElementById('spec-packaging');
+  const exportBtn = document.getElementById('btn-export-quote');
+
+  function update() {
+    let v = parseFloat(sliderV.value);
+    let b = parseFloat(sliderB.value);
+    let o = parseFloat(sliderO.value);
+    let c = parseFloat(sliderC.value);
+
+    // Normalize so total is always 100
+    let total = v + b + o + c;
+    if (total === 0) { v = 55; b = 20; o = 5; c = 20; total = 100; }
+    
+    let normV = Math.round((v / total) * 100);
+    let normB = Math.round((b / total) * 100);
+    let normO = Math.round((o / total) * 100);
+    let normC = 100 - (normV + normB + normO);
+    if (normC < 0) { normV += normC; normC = 0; }
+
+    valV.textContent = normV + '%';
+    valB.textContent = normB + '%';
+    valO.textContent = normO + '%';
+    valC.textContent = normC + '%';
+
+    barV.style.width = normV + '%';
+    barB.style.width = normB + '%';
+    barO.style.width = normO + '%';
+    barC.style.width = normC + '%';
+
+    summaryV.textContent = normV + '%';
+    summaryB.textContent = normB + '%';
+    summaryO.textContent = normO + '%';
+    summaryC.textContent = normC + '%';
+    summaryCut.textContent = cutSelect.value.split(' ')[0] + ' mm';
+    summaryMoisture.textContent = moistureSelect.value;
+
+    // Mathematical models based on industry CRES physics
+    // Base lamina filling power: 5.0 cm3/g. CRES filling power: 8.0 cm3/g (+60% over lamina alone)
+    let calculatedFP = (5.0 * ((100 - normC) / 100) + 8.0 * (normC / 100)).toFixed(1);
+    metricFP.textContent = calculatedFP + ' cm³/g';
+
+    // Lamina savings: ~0.5% per 1% CRES
+    let savings = (normC * 0.5).toFixed(1);
+    metricSavings.textContent = savings + '%';
+
+    // Tar reduction: at 30% CRES tar drops ~57% (1.9% per 1% CRES)
+    let tarReduction = Math.round(normC * 1.9);
+    metricTar.textContent = '-' + tarReduction + '%';
+
+    // Nicotine index: base 1.8mg down to 1.2mg with 30% CRES
+    let estNic = (1.8 - (normC * 0.02)).toFixed(2);
+    metricNic.textContent = estNic + ' mg';
+  }
+
+  [sliderV, sliderB, sliderO, sliderC].forEach(s => s.addEventListener('input', update));
+  [cutSelect, moistureSelect, casingSelect, packagingSelect].forEach(s => s.addEventListener('change', update));
+
+  // Preset buttons
+  document.querySelectorAll('.preset-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      sliderV.value = this.dataset.v;
+      sliderB.value = this.dataset.b;
+      sliderO.value = this.dataset.o;
+      sliderC.value = this.dataset.c;
+      update();
+    });
+  });
+
+  // Export to quote.html
+  exportBtn.addEventListener('click', function() {
+    const v = valV.textContent;
+    const b = valB.textContent;
+    const o = valO.textContent;
+    const c = valC.textContent;
+    const cut = cutSelect.value;
+    const moist = moistureSelect.value;
+    const casing = casingSelect.value;
+    const pkg = packagingSelect.value;
+    const fp = metricFP.textContent;
+    const sav = metricSavings.textContent;
+
+    const blendSummary = `Custom Formulation: Virginia ${v}, Burley ${b}, Oriental ${o}, CRES (Expanded Stems) ${c}. Calculated Filling Power: ${fp}, Est. Lamina Savings: ${sav}. Casing: ${casing}, Packaging: ${pkg}.`;
+
+    const params = new URLSearchParams();
+    params.set('product', 'Custom Tobacco Blend (Cut Rag + CRES)');
+    params.set('type', `Cut Rag + CRES Blend (CRES ${c})`);
+    params.set('cut', cut);
+    params.set('moisture', moist);
+    params.set('additional', blendSummary);
+
+    window.location.href = 'quote.html?' + params.toString();
+  });
+
+  update();
+})();
+</script>
+</body>
+</html>

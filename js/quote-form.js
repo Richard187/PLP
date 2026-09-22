@@ -2,21 +2,20 @@
  * Prime Leaf Processing — Quote Form (RFQ)
  * quote-form.js
  *
- * Prepared for backend integration:
- *   - Supabase: use supabase.from('rfq_submissions').insert()
- *   - PHP: POST to api/rfq.php
- *   - Node.js: POST to /api/rfq
- *   - Email API: Resend / SendGrid
- *   - Webhook: POST to CRM / Zapier / Make
- *
- * NEVER expose API keys in frontend code.
- * Use a backend proxy or serverless function.
+ * Email delivery via Formspree (https://formspree.io)
+ * Replace YOUR_FORM_ID_RFQ with the ID from your Formspree dashboard.
+ * Sign up free at formspree.io → New Form → point it to info@primeleafp.com
  */
 
 (function () {
   'use strict';
 
-  const form = document.getElementById('rfq-form');
+  // ── Formspree endpoint ──────────────────────────────────────
+  // 1. Go to https://formspree.io and sign up free
+  // 2. Create a new form, set the email to info@primeleafp.com
+  // 3. Copy the form ID and paste below (create a SEPARATE form from contact)
+  const FORMSPREE_ID = 'YOUR_FORM_ID_RFQ'; // ← replace this
+  const ENDPOINT = `https://formspree.io/f/${FORMSPREE_ID}`;
   if (!form) return;
 
   const submitBtn = form.querySelector('[data-rfq-submit]');
@@ -25,9 +24,45 @@
   // ── Pre-fill from URL params ────────────────────────────────
   (function prefillFromURL() {
     const params = new URLSearchParams(window.location.search);
+    const keyMap = {
+      'product': 'rfq-product',
+      'type': 'rfq-tobacco-type',
+      'tobacco-type': 'rfq-tobacco-type',
+      'cut': 'rfq-cut-specification',
+      'cut-width': 'rfq-cut-specification',
+      'cut-specification': 'rfq-cut-specification',
+      'moisture': 'rfq-moisture',
+      'packaging': 'rfq-packaging',
+      'quantity': 'rfq-quantity',
+      'destination': 'rfq-destination',
+      'additional': 'rfq-additional',
+      'blend': 'rfq-additional',
+      'notes': 'rfq-additional'
+    };
+
     params.forEach((value, key) => {
-      const el = form.querySelector(`[name="${key}"], [data-rfq-field="${key}"]`);
-      if (el) el.value = decodeURIComponent(value);
+      const decoded = decodeURIComponent(value);
+      const targetName = keyMap[key] || key;
+      const el = form.querySelector(`[name="${targetName}"], [name="rfq-${targetName}"], [data-rfq-field="${targetName}"]`);
+      if (el) {
+        if (el.tagName === 'SELECT') {
+          // If select option doesn't exist exactly, try matching text or add option
+          let found = false;
+          for (let opt of el.options) {
+            if (opt.value.toLowerCase().includes(decoded.toLowerCase()) || decoded.toLowerCase().includes(opt.value.toLowerCase())) {
+              opt.selected = true;
+              found = true;
+              break;
+            }
+          }
+          if (!found && decoded) {
+            const newOpt = new Option(decoded, decoded, true, true);
+            el.add(newOpt);
+          }
+        } else {
+          el.value = decoded;
+        }
+      }
     });
   })();
 
@@ -164,34 +199,21 @@
       submitted_at:           new Date().toISOString()
     };
 
-    try {
-      /**
-       * ─────────────────────────────────────────────────────
-       * BACKEND INTEGRATION POINT
-       * Uncomment and configure one of the following:
-       *
-       * A) Supabase:
-       *    const { error } = await supabaseClient
-       *      .from('rfq_submissions')
-       *      .insert([payload]);
-       *    if (error) throw error;
-       *
-       * B) REST API (PHP / Node):
-       *    const res = await fetch('/api/rfq', {
-       *      method: 'POST',
-       *      headers: { 'Content-Type': 'application/json' },
-       *      body: JSON.stringify(payload)
-       *    });
-       *    if (!res.ok) throw new Error('Server error');
-       *
-       * C) Email API (Resend / SendGrid):
-       *    // Call your serverless function, not client-side API key
-       * ─────────────────────────────────────────────────────
-       */
+      const formData = new FormData();
+      Object.entries(payload).forEach(([k, v]) => { if (v) formData.set(k, v); });
+      formData.set('_replyto', payload.email);
+      formData.set('_subject', `[PLP] New RFQ from ${payload.company_name || payload.full_name}`);
 
-      // TEMPORARY: Simulate successful submission (remove when backend connected)
-      await new Promise(resolve => setTimeout(resolve, 1200));
-      console.log('[RFQ] Payload ready for backend:', payload);
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.errors?.[0]?.message || 'Server error');
+      }
 
       showSuccess();
       form.reset();

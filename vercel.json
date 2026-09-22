@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "buildCommand": null,
+  "outputDirectory": "./",
+  "framework": null,
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options",         "value": "SAMEORIGIN" },
+        { "key": "X-XSS-Protection",        "value": "1; mode=block" },
+        { "key": "Referrer-Policy",          "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy.html",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/terms.html",
+      "permanent": true
+    },
+    {
+      "source": "/cookie-policy",
+      "destination": "/cookie-policy.html",
+      "permanent": true
+    },
+    {
+      "source": "/sourcing",
+      "destination": "/processing.html",
+      "permanent": true
+    },
+    {
+      "source": "/sourcing.html",
+      "destination": "/processing.html",
+      "permanent": true
+    },
+    {
+      "source": "/sustainability",
+      "destination": "/responsible-business.html",
+      "permanent": true
+    },
+    {
+      "source": "/sustainability.html",
+      "destination": "/responsible-business.html",
+      "permanent": true
+    },
+    {
+      "source": "/insights",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/insights.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
