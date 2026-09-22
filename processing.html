@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tobacco Processing Capabilities | Prime Leaf Processing | Bangladesh</title>
+  <meta name="description" content="Full tobacco processing capabilities — leaf selection, threshing, conditioning, precision cutting, drying, blending and quality control for B2B customers.">
+  <link rel="canonical" href="https://www.primeleafp.com/processing.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    .process-flow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: start; }
+    .process-stage-detail { display: none; }
+    .process-stage-detail.active { display: flex; flex-direction: column; gap: var(--space-5); }
+    .process-stage-detail__img { border-radius: var(--radius-xl); overflow: hidden; aspect-ratio: 16/9; background: linear-gradient(135deg, var(--forest-dark), var(--charcoal)); display: flex; align-items: center; justify-content: center; }
+    @media (max-width: 767px) { .process-flow-grid { grid-template-columns: 1fr; } }
+    .cut-rag-flow { counter-reset: flow-step; }
+    .cut-rag-flow-item { counter-increment: flow-step; display: flex; align-items: flex-start; gap: var(--space-4); padding: var(--space-5); border-bottom: 1px solid rgba(255,255,255,0.06); transition: background var(--transition-base); border-radius: var(--radius-md); cursor: pointer; }
+    .cut-rag-flow-item:hover { background: rgba(176,138,69,0.08); }
+    .cut-rag-flow-item::before { content: counter(flow-step, decimal-leading-zero); font-family: var(--font-heading); font-size: 0.7rem; font-weight: 800; color: var(--brass); min-width: 28px; padding-top: 3px; }
+    .cut-rag-flow-item__title { font-weight: 700; color: var(--white); margin-bottom: var(--space-1); }
+    .cut-rag-flow-item__desc { font-size: var(--text-sm); color: rgba(245,243,237,0.55); margin: 0; }
+  </style>
+</head>
+<body data-page="processing">
+<div id="site-nav"></div>
+
+<main id="main-content">
+
+  <section class="page-hero" aria-labelledby="processing-page-title">
+    <div class="container">
+      <div class="page-hero__content">
+        <nav class="page-hero__breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span aria-hidden="true">›</span><span>Processing</span>
+        </nav>
+        <h1 id="processing-page-title" class="page-hero__title">Processing Capabilities</h1>
+        <p class="page-hero__subtitle">From raw tobacco leaf to finished cut-rag — every stage engineered for consistency and precision.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section" aria-labelledby="processing-overview">
+    <div class="container">
+      <div class="split split--40-60">
+        <div class="reveal-left">
+          <p class="eyebrow">Our Approach</p>
+          <h2 id="processing-overview">Specification-First Processing</h2>
+          <p>Every processing run at Prime Leaf Processing begins with the customer's specification. Before a single kilogram of tobacco enters our facility, we have agreed the key parameters: tobacco type, grade, cut width, moisture, blend composition, and packaging.</p>
+          <p>This specification-first approach ensures that our processing operations are always aligned with what the customer needs — not what is easiest to produce.</p>
+          <p>Our facility at BEPZA EZ, Chattogram is equipped for the full tobacco processing cycle — from initial leaf preparation through to finished cut-rag packaging and dispatch.</p>
+          <div class="btn-group mt-6">
+            <a href="quote.html" class="btn btn--primary">Discuss Your Specification</a>
+            <a href="facilities.html" class="btn btn--outline">View Facilities</a>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
+            <div style="padding:var(--space-6);background:var(--offwhite);border-radius:var(--radius-lg);border-top:3px solid var(--brass);">
+              <p style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;color:var(--forest);">8</p>
+              <p style="font-size:var(--text-sm);color:var(--gray-500);margin:0;">Processing Stages</p>
+            </div>
+            <div style="padding:var(--space-6);background:var(--offwhite);border-radius:var(--radius-lg);border-top:3px solid var(--forest);">
+              <p style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;color:var(--forest);">9</p>
+              <p style="font-size:var(--text-sm);color:var(--gray-500);margin:0;">Quality Checkpoints</p>
+            </div>
+            <div style="padding:var(--space-6);background:var(--offwhite);border-radius:var(--radius-lg);border-top:3px solid var(--leaf);">
+              <p style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;color:var(--forest);">5+</p>
+              <p style="font-size:var(--text-sm);color:var(--gray-500);margin:0;">Tobacco Types</p>
+            </div>
+            <div style="padding:var(--space-6);background:var(--offwhite);border-radius:var(--radius-lg);border-top:3px solid var(--charcoal);">
+              <p style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;color:var(--forest);">100%</p>
+              <p style="font-size:var(--text-sm);color:var(--gray-500);margin:0;">Spec-Driven</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Processing Flow -->
+  <section class="section section--dark" aria-labelledby="processing-stages-heading">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <p class="eyebrow">Processing Stages</p>
+        <h2 id="processing-stages-heading" style="color:var(--white)">The Full Processing Cycle</h2>
+        <p class="section-lead" style="margin:0 auto;">Select any stage to learn more about our approach and quality controls.</p>
+      </div>
+
+      <div class="process-flow-grid">
+        <div class="cut-rag-flow" id="processing-flow-nav" role="list">
+          <div class="cut-rag-flow-item active" role="listitem" data-stage="0" tabindex="0">
+            <div><p class="cut-rag-flow-item__title">Leaf Selection</p><p class="cut-rag-flow-item__desc">Selection and preparation of tobacco leaf to specification.</p></div>
+          </div>
+          <div class="cut-rag-flow-item" role="listitem" data-stage="1" tabindex="0">
+            <div><p class="cut-rag-flow-item__title">Threshing &amp; Separation</p><p class="cut-rag-flow-item__desc">Controlled mechanical separation maintaining leaf integrity.</p></div>
+          </div>
+          <div class="cut-rag-flow-item" role="listitem" data-stage="2" tabindex="0">
+            <div><p class="cut-rag-flow-item__title">Conditioning</p><p class="cut-rag-flow-item__desc">Moisture and physical conditioning before further processing.</p></div>
+          </div>
+          <div class="cut-rag-flow-item" role="listitem" data-stage="3" tabindex="0">
+            <div><p class="cut-rag-flow-item__title">Precision Cutting</p><p class="cut-rag-flow-item__desc">Cut-width and cut-length to agreed customer specification.</p></div>
+          </div>
+          <div class="cut-rag-flow-item" role="listitem" data-stage="4" tabindex="0">
+            <div><p class="cut-rag-flow-item__title">Drying &amp; Conditioning</p><p class="cut-rag-flow-item__desc">Controlled drying to achieve required physical characteristics.</p></div>
+          </div>
+          <div class="cut-rag-flow-item" role="listitem" data-stage="5" tabindex="0">
+            <div><p class="cut-rag-flow-item__title">Blending</p><p class="cut-rag-flow-item__desc">Customer-defined blend formulations consistently applied.</p></div>
+          </div>
+          <div class="cut-rag-flow-item" role="listitem" data-stage="6" tabindex="0">
+            <div><p class="cut-rag-flow-item__title">Quality Control</p><p class="cut-rag-flow-item__desc">Multi-stage inspection throughout the processing cycle.</p></div>
+          </div>
+          <div class="cut-rag-flow-item" role="listitem" data-stage="7" tabindex="0">
+            <div><p class="cut-rag-flow-item__title">Packaging &amp; Dispatch</p><p class="cut-rag-flow-item__desc">Customer-specified packaging and shipment preparation.</p></div>
+          </div>
+        </div>
+
+        <div id="stage-detail-container">
+          <div class="process-stage-detail active" data-stage="0">
+            <div class="process-stage-detail__img"><img src="assets/images/process-leaf-selection.jpg" alt="Tobacco leaf selection" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <p class="eyebrow" style="color:var(--brass-light)">Stage 01</p>
+            <h3 style="color:var(--white)">Leaf Selection</h3>
+            <p style="color:rgba(245,243,237,0.7)">Selection and preparation of tobacco leaf according to required specifications. All incoming leaf is assessed against agreed grade, type and quality parameters before entering the processing cycle. Only material that meets the agreed specification proceeds to the next stage.</p>
+            <div class="timeline-panel__quality" style="background:rgba(18,59,42,0.3);border-color:rgba(117,140,85,0.3);color:rgba(245,243,237,0.8);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Quality Check: All incoming leaf inspected before processing begins.
+            </div>
+          </div>
+          <div class="process-stage-detail" data-stage="1">
+            <div class="process-stage-detail__img"><img src="assets/images/process-threshing.jpg" alt="Tobacco threshing and separation" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <p class="eyebrow" style="color:var(--brass-light)">Stage 02</p>
+            <h3 style="color:var(--white)">Threshing &amp; Separation</h3>
+            <p style="color:rgba(245,243,237,0.7)">Controlled mechanical threshing and separation of tobacco material. The goal is to separate the leaf lamina from the stem while maintaining leaf integrity. Foreign material and non-tobacco material control is applied at this stage.</p>
+            <div class="timeline-panel__quality" style="background:rgba(18,59,42,0.3);border-color:rgba(117,140,85,0.3);color:rgba(245,243,237,0.8);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Quality Check: Foreign material control applied at threshing.
+            </div>
+          </div>
+          <div class="process-stage-detail" data-stage="2">
+            <div class="process-stage-detail__img"><img src="assets/images/process-conditioning.jpg" alt="Tobacco conditioning machinery" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <p class="eyebrow" style="color:var(--brass-light)">Stage 03</p>
+            <h3 style="color:var(--white)">Conditioning</h3>
+            <p style="color:rgba(245,243,237,0.7)">Controlled moisture and physical conditioning of tobacco before cutting and further processing. Conditioning ensures the leaf is in optimum physical condition for subsequent operations, with moisture levels brought within the range required for effective processing.</p>
+            <div class="timeline-panel__quality" style="background:rgba(18,59,42,0.3);border-color:rgba(117,140,85,0.3);color:rgba(245,243,237,0.8);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Quality Check: Moisture levels monitored and controlled throughout.
+            </div>
+          </div>
+          <div class="process-stage-detail" data-stage="3">
+            <div class="process-stage-detail__img"><img src="assets/images/process-cutting.jpg" alt="Precision tobacco cutting" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <p class="eyebrow" style="color:var(--brass-light)">Stage 04</p>
+            <h3 style="color:var(--white)">Precision Cutting</h3>
+            <p style="color:rgba(245,243,237,0.7)">Precision cutting to agreed cut-width specifications. Cut-width and cut-length are set according to the customer's specification and are verified at regular intervals throughout the production run to maintain consistency.</p>
+            <div class="timeline-panel__quality" style="background:rgba(18,59,42,0.3);border-color:rgba(117,140,85,0.3);color:rgba(245,243,237,0.8);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Quality Check: Cut-width verified at regular intervals.
+            </div>
+          </div>
+          <div class="process-stage-detail" data-stage="4">
+            <div class="process-stage-detail__img"><img src="assets/images/process-drying.jpg" alt="Tobacco drying and conditioning" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <p class="eyebrow" style="color:var(--brass-light)">Stage 05</p>
+            <h3 style="color:var(--white)">Drying &amp; Conditioning</h3>
+            <p style="color:rgba(245,243,237,0.7)">Controlled drying and conditioning to achieve the required final moisture content and physical characteristics. Final moisture is verified against the agreed specification before the product proceeds to packaging.</p>
+            <div class="timeline-panel__quality" style="background:rgba(18,59,42,0.3);border-color:rgba(117,140,85,0.3);color:rgba(245,243,237,0.8);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Quality Check: Final moisture verified against specification.
+            </div>
+          </div>
+          <div class="process-stage-detail" data-stage="5">
+            <div class="process-stage-detail__img"><img src="assets/images/process-blending.jpg" alt="Tobacco blending" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <p class="eyebrow" style="color:var(--brass-light)">Stage 06</p>
+            <h3 style="color:var(--white)">Blending</h3>
+            <p style="color:rgba(245,243,237,0.7)">Blending of tobacco types and grades according to customer-defined formulations. Blend consistency is maintained across production batches to ensure repeatable, reliable supply for customers with ongoing requirements.</p>
+            <div class="timeline-panel__quality" style="background:rgba(18,59,42,0.3);border-color:rgba(117,140,85,0.3);color:rgba(245,243,237,0.8);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Quality Check: Blend composition verified before dispatch.
+            </div>
+          </div>
+          <div class="process-stage-detail" data-stage="6">
+            <div class="process-stage-detail__img"><img src="assets/images/process-quality.jpg" alt="Tobacco quality control inspection" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <p class="eyebrow" style="color:var(--brass-light)">Stage 07</p>
+            <h3 style="color:var(--white)">Quality Control</h3>
+            <p style="color:rgba(245,243,237,0.7)">Quality is not only checked at the end — it is controlled at every stage of the processing cycle. Our multi-stage quality verification system covers incoming leaf, in-process checks, and final product verification against agreed customer specifications.</p>
+            <div class="timeline-panel__quality" style="background:rgba(18,59,42,0.3);border-color:rgba(117,140,85,0.3);color:rgba(245,243,237,0.8);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Multi-stage quality verification throughout the cycle.
+            </div>
+          </div>
+          <div class="process-stage-detail" data-stage="7">
+            <div class="process-stage-detail__img"><img src="assets/images/process-packaging.jpg" alt="Tobacco packaging and dispatch" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <p class="eyebrow" style="color:var(--brass-light)">Stage 08</p>
+            <h3 style="color:var(--white)">Packaging &amp; Dispatch</h3>
+            <p style="color:rgba(245,243,237,0.7)">Finished product is packaged in bulk, cartons or cases according to customer specification. Packaging is inspected before dispatch. Export documentation is prepared according to destination requirements.</p>
+            <div class="timeline-panel__quality" style="background:rgba(18,59,42,0.3);border-color:rgba(117,140,85,0.3);color:rgba(245,243,237,0.8);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Final packaging inspection before release for shipment.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner" aria-labelledby="processing-cta">
+    <div class="container">
+      <div class="cta-banner__content reveal">
+        <h2 id="processing-cta" class="cta-banner__title">Discuss Your Processing Requirements</h2>
+        <p class="cta-banner__subtitle">Send us your specification and our processing team will respond with a detailed proposal.</p>
+        <div class="btn-group" style="justify-content:center;">
+          <a href="quote.html" class="btn btn--primary btn--lg">Request a Quote</a>
+          <a href="contact.html" class="btn btn--outline-light btn--lg">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="js/cms-config.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js" defer></script>
+<script defer>
+(function(){
+  const items = document.querySelectorAll('.cut-rag-flow-item');
+  const details = document.querySelectorAll('.process-stage-detail');
+  items.forEach((item,i)=>{
+    item.addEventListener('click',()=>{
+      items.forEach(it=>it.classList.remove('active'));
+      details.forEach(d=>d.classList.remove('active'));
+      item.classList.add('active');
+      details[i]?.classList.add('active');
+    });
+    item.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();item.click();}});
+  });
+})();
+</script>
+</body>
+</html>
