@@ -9,17 +9,28 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.primeleafp.com/">
 
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://www.primeleafp.com/">
-  <meta property="og:title"       content="Prime Leaf Processing | Tobacco Processing &amp; Cut-Rag Manufacturing">
-  <meta property="og:description" content="Bangladesh-based B2B tobacco processing and cut-rag manufacturing for international manufacturers, traders and industry partners.">
-  <meta property="og:image"       content="https://www.primeleafp.com/assets/images/hero-facility.jpg">
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <!-- Open Graph (WhatsApp, Facebook, LinkedIn, Telegram) -->
+  <meta property="og:type"         content="website">
+  <meta property="og:url"          content="https://www.primeleafp.com/">
+  <meta property="og:title"        content="Prime Leaf Processing | Tobacco Processing &amp; Cut-Rag Manufacturing">
+  <meta property="og:description"  content="Bangladesh-based B2B tobacco processing and cut-rag manufacturing. Specification-driven Cut-Rag &amp; CRES for international manufacturers.">
+  <meta property="og:image"        content="https://www.primeleafp.com/assets/images/og-preview.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt"    content="Prime Leaf Processing Logo">
+  <meta property="og:site_name"    content="Prime Leaf Processing">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Prime Leaf Processing | Tobacco Processing &amp; Cut-Rag Manufacturing">
-  <meta name="twitter:description" content="Bangladesh-based B2B tobacco processing and cut-rag manufacturing.">
+  <meta name="twitter:description" content="Bangladesh-based B2B tobacco processing and cut-rag manufacturing for international manufacturers.">
+  <meta name="twitter:image"       content="https://www.primeleafp.com/assets/images/og-preview.png">
+  <meta name="twitter:image:alt"   content="Prime Leaf Processing Logo">
 
   <!-- Schema.org Organization -->
   <script type="application/ld+json">
@@ -54,7 +65,14 @@
     .sourcing-point__num { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 900; color: var(--brass); opacity: 0.25; line-height: 1; margin-bottom: var(--space-2); }
     .sourcing-point__title { font-weight: 700; color: var(--forest); margin-bottom: var(--space-2); }
     .sourcing-point__desc { font-size: var(--text-sm); color: var(--gray-500); line-height: 1.65; margin: 0; }
-    @media (max-width: 767px) { .sourcing-points { grid-template-columns: 1fr; } }
+    @media (max-width: 767px) {
+      .sourcing-points { grid-template-columns: 1fr; }
+      /* Hero buttons: stack vertically, full width, visible on mobile */
+      .hero__actions { flex-direction: column; align-items: stretch; gap: var(--space-3); width: 100%; }
+      .hero__actions .btn { width: 100%; justify-content: center; text-align: center; min-height: 52px; }
+      /* Inline form grids: collapse to 1 col */
+      [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 

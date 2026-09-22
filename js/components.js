@@ -13,7 +13,7 @@
 <nav id="main-nav" class="nav transparent" role="navigation" aria-label="Main navigation">
   <div class="nav__inner">
     <a href="index.html" class="nav__logo" aria-label="Prime Leaf Processing — Home">
-      <img src="assets/images/logo.png" alt="Prime Leaf Processing" height="100" style="width:auto;height:100px;object-fit:contain;">
+      <img src="assets/images/logo.png" alt="Prime Leaf Processing" height="48" style="width:auto;height:48px;object-fit:contain;max-height:48px;">
     </a>
 
     <ul class="nav__links" role="list">
